@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { Pokemon } from "./types";
-import { PokeCard } from "./PokeCard";
+import { Pokemon } from "../types";
+import { PokeCard } from "../PokeCard";
 
 export const TempStorePage = () => {
   const [pokemon, setPokemon] = useState<Pokemon | undefined>(undefined);
