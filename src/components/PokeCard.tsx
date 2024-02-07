@@ -1,21 +1,23 @@
-import React, { useEffect, useState } from "react";
-import { typeColor } from "./consts";
-import { Pokemon, PokemonType } from "./types";
-import { getPokeName } from "./helper";
+import React, { useEffect, useState } from "react"
+import { typeColor } from "../consts"
+import { Pokemon, PokemonType } from "../types"
+import { getPokeName } from "../helper"
 
 export interface PokeCardProps {
   pokemon: Pokemon;
 }
 
 export const PokeCard = ({ pokemon }: PokeCardProps) => {
-  const hp = pokemon.stats[0].base_stat ?? 66;
-  const imgSrc = pokemon.sprites.other.dream_world.front_default;
-  const pokeName = pokemon.name;
-  const statAttack = pokemon.stats[1].base_stat;
-  const statDefense = pokemon.stats[2].base_stat;
-  const statSpeed = pokemon.stats[5].base_stat;
-  const types = pokemon.types;
-  const themeColor = types ? typeColor[types[0].type.name] : "#eee";
+  const hp = pokemon.stats[0].base_stat ?? 66
+  const imgSrc = pokemon.sprites.other.dream_world.front_default
+  const pokeName = pokemon.name
+  const statAttack = pokemon.stats[1].base_stat
+  const statDefense = pokemon.stats[2].base_stat
+  const statSpeed = pokemon.stats[5].base_stat
+  const types = pokemon.types
+  const themeColor = types ? typeColor[types[0].type.name] : "#eee"
+
+  
 
   return (
     <div>
@@ -33,7 +35,7 @@ export const PokeCard = ({ pokemon }: PokeCardProps) => {
         <h2 className="poke-name">{getPokeName(pokeName)}</h2>
         <div className="types">
           {types.map((item) => (
-            <span style={{ background: `${themeColor}` }}>
+            <span style={{ background: `${themeColor}` }} key={item.type.name}>
               {item.type.name}
             </span>
           ))}
@@ -54,5 +56,5 @@ export const PokeCard = ({ pokemon }: PokeCardProps) => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}

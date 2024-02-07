@@ -1,5 +1,5 @@
 .page {
-  height: 100vh;
+  height: --calc(100vh-70px);
   width: 100vw;
   background-color: #eff3ff;
 }
