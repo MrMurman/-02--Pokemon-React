@@ -1,31 +1,31 @@
-import React, { useEffect, useState } from "react";
-import { Pokemon } from "../types";
-import { PokeCard } from "../components/PokeCard";
+import React, { useEffect, useState } from "react"
+import { Pokemon } from "../types"
+import { PokeCard } from "../components/PokeCard"
 
 export const TempStorePage = () => {
-  const [pokemon, setPokemon] = useState<Pokemon | undefined>(undefined);
-  const [isLoading, setIsLoading] = useState(false);
+  const [pokemon, setPokemon] = useState<Pokemon | undefined>(undefined)
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
-    getPokeData();
-  }, []);
+    getPokeData()
+  }, [])
 
-  const url = "https://pokeapi.co/api/v2/pokemon/";
+  const url = "https://pokeapi.co/api/v2/pokemon/"
   const getPokeData = () => {
-    setIsLoading(true);
+    setIsLoading(true)
     //Generate random number between 1 and 150
-    let id = Math.floor(Math.random() * 150) + 1;
+    const id = Math.floor(Math.random() * 150) + 1
 
-    const finalUrl = url + id;
+    const finalUrl = url + id
 
     fetch(finalUrl)
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
-        setPokemon(data);
+        console.log(data)
+        setPokemon(data)
       })
-      .finally(() => setIsLoading(false));
-  };
+      .finally(() => setIsLoading(false))
+  }
 
   return (
     <div className="page">
@@ -37,5 +37,5 @@ export const TempStorePage = () => {
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
