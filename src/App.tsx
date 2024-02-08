@@ -18,10 +18,12 @@ function App () {
       </header>
       <main>
 
-        <Routes>
-          <Route path="/" element={<TempStorePage />} />
-          <Route path="/auth" element={<AuthenticationPage />} />
-        </Routes>
+        <div style={{background: '#eff3ff', height: '100vh', display: 'flow-root'}}>
+          <Routes>
+            <Route path="/" element={<TempStorePage />} />
+            <Route path="/auth" element={<AuthenticationPage />} />
+          </Routes>
+        </div>
 
       </main>
     </BrowserRouter>

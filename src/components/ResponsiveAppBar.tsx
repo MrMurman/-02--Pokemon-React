@@ -57,7 +57,7 @@ export const ResponsiveAppBar = () => {
             </NavLink>
 
             <NavLink to='/auth'>
-              <Button sx={{ my: 2, color: "white", display: "block" }}>Sign-in</Button>
+              <Button sx={{ my: 2, color: "white", display: "block" }}>Profile</Button>
                 
             </NavLink>
 
